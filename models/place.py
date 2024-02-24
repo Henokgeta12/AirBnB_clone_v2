@@ -78,3 +78,4 @@ class Place(BaseModel, Base):
             if type(obj).__name__ == 'Amenity':
                 new_amenity = 'Amenity' + '.' + obj.id
                 self.amenity_ids.append(new_amenity)
+
