@@ -4,14 +4,12 @@ A Python script that starts a Flask web application.
 """
 
 from flask import Flask
-
 app = Flask(__name__)
 
-@app.route('/', strict_slash=False)
+@app.route('/', strict_slashes=False)
 def HBNB():
     """
     A route decorator that handles GET requests to the root URL ("/").
-    Returns a string "Hello HBNB!".
     """
     return "Hello HBNB!"
 
