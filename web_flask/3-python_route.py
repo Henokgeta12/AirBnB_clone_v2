@@ -27,9 +27,10 @@ def c_is_fun(text):
     return 'C ' + text.replace('_', ' ')
 
 
-@app.route('/python/text')
-def python(text):
-    """Return reformatted text
+@app.route('/python/')
+@app.route('/python/<text>')
+def python_with_text(text='is cool'):
+    """Reformat text based on optional variable
     """
     return 'Python ' + text.replace('_', ' ')
 
