@@ -2,7 +2,7 @@
 """Start web application with two routings
 """
 
-from flask import Flask,render_template
+from flask import Flask, render_template
 app = Flask(__name__)
 
 
@@ -34,20 +34,20 @@ def python_with_text(text='is cool'):
     """
     return 'Python ' + text.replace('_', ' ')
 
+
 @app.route('/number/<int:n>')
 def number(n=None):
-    """Return string when route queried
+    """Allow request if path variable is a valid integer
     """
-    if isinstance(n, int):
-        return str(n) + 'is a number'
+    return str(n) + ' is a number'
 
 
 @app.route('/number_template/<int:n>')
-def number_template(n=None):
-    """Return string when route queried
+def number_template(n):
+    """Retrieve template for request
     """
-    if isinstance(n, int):
-        return render_template('5-number.html', num=n)
+    path = '5-number.html'
+    return render_template(path, num=n)
 
 
 if __name__ == '__main__':
